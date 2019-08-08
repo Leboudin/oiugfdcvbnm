@@ -19,7 +19,7 @@ jobs:
     ####   /go/src/bitbucket.org/circleci/go-tool
     working_directory: /go/src/github.com/Leboudin/oiugfdcvbnm
     steps:
-      - checkout & install dependicies
+      - checkout
 
       # specify any bash command here prefixed with `run: `
       - run: export GO111MODULE=on
