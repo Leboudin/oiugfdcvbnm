@@ -14,5 +14,8 @@ steps:
       from_secret: docker_password
   
   when:
+    events:
+    - push
+    - pull_request
     branch:
     - master
