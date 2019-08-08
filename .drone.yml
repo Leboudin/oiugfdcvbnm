@@ -22,3 +22,13 @@ steps:
     - pull_request
     branch:
     - master
+    
+- name: notify-on-success
+  image: lddsb/drone-dingtalk-message
+  settings:
+    token: 
+      from_secret: dingtalk_token
+    type: markdown
+    sha_link: true
+    message_color: true
+    message_pic: true
