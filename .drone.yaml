@@ -1,0 +1,21 @@
+kind: pipeline
+name: test-pipeline
+
+steps:
+- name: build-image
+  image: plugins/docker
+  settings:
+    repo: vadden/test-droneci-$DRONE_BRANCH
+    tags:
+      - latest
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+  
+  when:
+    event:
+    - push
+    - pull_request
+    branch:
+    - master
