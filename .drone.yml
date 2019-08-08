@@ -30,4 +30,3 @@ steps:
       from_secret: dingtalk_token
     type: markdown
     sha_link: true
-    message_color: true
