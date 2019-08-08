@@ -1,11 +1,14 @@
 kind: pipeline
 name: test-pipeline
 
+clone:
+  depth: 1
+
 steps:
 - name: build-image
   image: plugins/docker
   settings:
-    repo: vadden/test-droneci-$DRONE_BRANCH
+    repo: vadden/test-droneci-${DRONE_BRANCH}
     tags:
       - latest
     username:
