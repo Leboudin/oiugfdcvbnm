@@ -31,4 +31,3 @@ steps:
     type: markdown
     sha_link: true
     message_color: true
-    message_pic: true
