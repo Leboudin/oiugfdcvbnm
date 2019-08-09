@@ -26,10 +26,15 @@ steps:
     branch:
     - master
     
-- name: notify-on-success
+- name: notify
   image: lddsb/drone-dingtalk-message
   settings:
     token: 
       from_secret: dingtalk_token
     type: markdown
     sha_link: true
+    
+  when:
+    status:
+    - success
+    - failure
