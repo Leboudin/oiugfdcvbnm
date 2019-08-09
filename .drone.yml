@@ -18,8 +18,8 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    build_args:
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    build_args_from_env:
+      - GITHUB_TOKEN
   
   when:
     events:
