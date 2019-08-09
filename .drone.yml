@@ -17,7 +17,7 @@ steps:
       from_secret: docker_password
     build_args:
       - GITHUB_TOKEN:
-        from_secret: github_token
+          from_secret: github_token
   
   when:
     events:
