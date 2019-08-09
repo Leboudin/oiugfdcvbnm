@@ -7,6 +7,9 @@ clone:
 steps:
 - name: build-image
   image: plugins/docker
+  environment:
+    GITHUB_TOKEN:
+      from_secret: github_token
   settings:
     repo: vadden/test-droneci-${DRONE_BRANCH}
     tags:
@@ -16,8 +19,7 @@ steps:
     password:
       from_secret: docker_password
     build_args:
-      - GITHUB_TOKEN:
-          from_secret: github_token
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
   
   when:
     events:
