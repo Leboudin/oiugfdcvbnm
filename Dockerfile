@@ -13,7 +13,7 @@ ENV GO111MODULE on
 
 RUN git config --global url."https://$GITHUB_TOKEN:x-oauth-basic@github.com/".insteadOf "https://github.com/"
 
-RUN go get
+RUN go get -u github.com/Leboudin/common
 
 RUN CGO_ENABLED=0 GOOS=linux go build -v -o application
 
